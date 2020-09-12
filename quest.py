@@ -1,8 +1,6 @@
 from listaligada import ListaLigada
+#1
 l = ListaLigada()
-l.append(1)
-l.append(2)
-l.append(3)
 
 def reverse_lst(lst):          #A Lista deve ter a função __setitem__ troca de elementos
     tam = int(lst._tam)        #tamanho da lista
@@ -14,9 +12,27 @@ def reverse_lst(lst):          #A Lista deve ter a função __setitem__ troca de
         lst[i] = derradeiro    #e o primeiro recebe o ultimo, assim a troca é feita.
         aux -= 1               #agora com o penultimo até chegar ao meio.
     return lst                 #lista invetida, sogra desce!!
+'''
+print("\n\tSepare os elementos com espaço!\n")
+while True:
+    elem = str(input("Insira os elementos da lista encadeada simples: "))
+    elem.split()
 
-print(l)
-print(reverse_lst(l))
+    for i in elem:
+        if i != ' ':
+            l.append(i)
+
+    print("\nLista encadeada simples: ", l)
+    print("Lista invertida: ", reverse_lst(l))
+
+    loop = input("\n\nDeseja continuar? 's' ou 'n'>>>")
+    if loop == 'n':
+        break
+'''
+#2
+
+
+
 
 
 

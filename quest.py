@@ -1,6 +1,4 @@
 from listaligada import ListaLigada
-import os
-#import time
 #1
 l = ListaLigada()
 
@@ -16,22 +14,14 @@ def reverse_lst(lst):          #A Lista deve ter a função __setitem__ troca de
     return lst                 #lista invetida, sogra desce!!
 
 print("\tInsira os elementos da Lista simples encadeada pressionando enter para confimar a inserção de cada elemnto.\n")
+print("---Insira 'n' para concluir!---\n")
 aux = 1
 while True:
-    print("Insira 'n' p/ concluir!\n")
     elem = str(input("Insira o {}° elemento: ".format(aux)))
-    os.system('cls')
-    #time.sleep(0.75)
-
-
     if elem == 'n':
         break
     l.append(elem)
     aux +=1
-for in range(5):
-    print(".")
-
-    #time.sleep(0.75)
 
 print("\nLista simples encadeada: ", l)
 print("Lista invertida: ", reverse_lst(l))

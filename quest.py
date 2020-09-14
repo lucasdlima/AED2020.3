@@ -65,3 +65,11 @@ def ordem(lst):
 
 #3 Implemente uma função que duplica uma lista simplesmente encadeada, criando novos nós smpre ao lado dos já
 # existentes. Se a lista era 1,7 vai se tonar 1,1,7,7.
+
+def double(lst):
+    pos = 0
+    for i in range(len(lst)):
+        lst.insert(pos, lst[pos])
+        pos += 2
+    return lst
+

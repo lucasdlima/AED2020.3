@@ -52,6 +52,16 @@ class ListaLigada:
         else:
             raise IndexError("List index out of range __setitem__")
 
+    def index(self, valor):
+        ponteiro = self.inicio
+        i = 0
+        while ponteiro:
+            if ponteiro.data == valor:
+                return i
+            ponteiro = ponteiro.next
+            i = i + 1
+        raise ValueError("{} is not in list".format(valor))
+
     def insert(self, index, valor):
         node = Node(valor)                          #envolve o valor em um nó
         if index == 0:                              #caso queira inserir na cabeça
@@ -62,5 +72,28 @@ class ListaLigada:
             node.next = ponteiro.next               #o proximo do novo nó será o que antes era o proximo do elemento que já estava ali
             ponteiro.next = node                    #e o proximo do elemento que já estava ali passará a ser o novo nó.
         self._tam += 1
+
+    '''def remove(self, valor):
+        if self.inicio == None:
+            raise ValueError("{} is not in list".format(valor))
+        elif valor == self.inicio.data:
+            self.inicio = self.inicio.next
+            return True
+        else:
+            anterior = self.inicio
+            ponteiro = self.inicio.next
+            while ponteiro:
+                if ponteiro.data == valor:
+                    anterior.next = ponteiro.next
+                    ponteiro.next = None
+                anterior = ponteiro
+                ponteiro = ponteiro.next
+            return True'''
+
+
+
+
+
+
 
 

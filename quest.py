@@ -62,5 +62,6 @@ def ordem(lst):
     if crescente == decrescente:
         return "fora de ordem!"
 
+
 #3 Implemente uma função que duplica uma lista simplesmente encadeada, criando novos nós smpre ao lado dos já
 # existentes. Se a lista era 1,7 vai se tonar 1,1,7,7.

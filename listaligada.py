@@ -73,27 +73,41 @@ class ListaLigada:
             ponteiro.next = node                    #e o proximo do elemento que já estava ali passará a ser o novo nó.
         self._tam += 1
 
-    '''def remove(self, valor):
-        if self.inicio == None:
-            raise ValueError("{} is not in list".format(valor))
-        elif valor == self.inicio.data:
-            self.inicio = self.inicio.next
+    def busca_insercao(self, valor_pesquisa, valor_inserir, pos):
+        if pos not in 'as':
+            raise ValueError("Posição invalida.")
+        node = valor_inserir
+        try:
+            valor_pesquisa = self.index(valor_pesquisa)
+        except ValueError:
+            return False
+        if pos == 's':
+            self.insert(valor_pesquisa+1, node)
             return True
         else:
-            anterior = self.inicio
-            ponteiro = self.inicio.next
-            while ponteiro:
-                if ponteiro.data == valor:
-                    anterior.next = ponteiro.next
-                    ponteiro.next = None
-                anterior = ponteiro
-                ponteiro = ponteiro.next
-            return True'''
+            self.insert(valor_pesquisa, node)
+            return True
 
-
-
-
-
+    def busca_remocao(self, valor):
+        try:
+            self.index(valor)
+        except ValueError:
+            return False
+        if self.inicio == None:                             #Se a lista estiver vazia
+            raise ValueError("{} is not in list".format(valor))
+        elif valor == self.inicio.data:             #Remover o inicio da lista
+            self.inicio = self.inicio.next
+            return True
+        else:                                       #Remover qualquer elemento que não seja o inicio.
+            anterior = self.inicio                  #Começa no inicio.
+            ponteiro = self.inicio.next             #Começa no segundo elemento.
+            while ponteiro:                         #Enquanto o ponteiro não for vazio.
+                if ponteiro.data == valor:          #Se o valor passado for igual ao ponteiro.
+                    anterior.next = ponteiro.next   #O anterior se liga com o proximo do ponteiro.
+                    ponteiro.next = None            #O proximo do Nó que tá sendo removido recebe vazio para cortar qualquer ligação dele com a lista.
+                anterior = ponteiro                 #Anterior avança para o ponteiro.
+                ponteiro = ponteiro.next            #Ponteiro avança para o proximo.
+            return True
 
 
 

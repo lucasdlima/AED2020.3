@@ -1,4 +1,4 @@
-from node import Node
+from AED.classes.node import Node
 
 class ListaLigada:
     def __init__(self):
@@ -17,7 +17,8 @@ class ListaLigada:
 
         else:
             self.inicio = self.fim = novo
-        self.app_pi(par_e_impar)
+        if isinstance(valor, int):
+            self.app_pi(par_e_impar)
         self._tam += 1
 
     def __len__(self):
@@ -138,6 +139,3 @@ class ListaLigada:
                 ponteiro.next = num
             else:
                 self.impares = num
-
-
-

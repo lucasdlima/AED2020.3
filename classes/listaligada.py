@@ -1,5 +1,6 @@
 from AED.classes.node import Node
 
+
 class ListaLigada:
     def __init__(self):
         self.inicio = None
@@ -46,11 +47,11 @@ class ListaLigada:
         if index == -1:
             return self.fim.data
         elif index < 0:
-            raise IndexError("AList index out of range __getitem__")
+            raise IndexError("List index out of range __getitem__")
         if ponteiro:
             return ponteiro.data
         else:
-            raise IndexError("AList index out of range __getitem__")
+            raise IndexError("List index out of range __getitem__")
 
     def __setitem__(self, index, value):  # lista[0] = 4
         ponteiro = self._getnode(index)
@@ -108,12 +109,13 @@ class ListaLigada:
         else:  # Remover qualquer elemento que não seja o inicio.
             anterior = self.inicio  # Começa no inicio.
             ponteiro = self.inicio.next  # Começa no segundo elemento.
-            while ponteiro:  # Enquanto o ponteiro não for vazio.
-                if ponteiro.data == valor:  # Se o valor passado for igual ao ponteiro.
+            while ponteiro:
+                if ponteiro.data == valor:
                     anterior.next = ponteiro.next  # O anterior se liga com o proximo do ponteiro.
                     ponteiro.next = None  # O proximo do Nó que tá sendo removido recebe vazio para cortar qualquer ligação dele com a lista.
-                anterior = ponteiro  # Anterior avança para o ponteiro.
-                ponteiro = ponteiro.next  # Ponteiro avança para o proximo.
+                anterior = ponteiro
+                ponteiro = ponteiro.next
+            self._tam = self._tam - 1
             return True
 
     def par(self, num):
@@ -139,3 +141,18 @@ class ListaLigada:
                 ponteiro.next = num
             else:
                 self.impares = num
+
+    def pop(self):
+        removido = self.fim.data
+        anterior = self.inicio
+        ponteiro = self.inicio.next
+        if not self.inicio.next:
+            self.inicio = self.inicio.next
+        while ponteiro:
+            if ponteiro == self.fim:
+                anterior.next = None
+                self.fim = anterior
+            anterior = ponteiro
+            ponteiro = ponteiro.next
+        self._tam = self._tam - 1
+        return removido

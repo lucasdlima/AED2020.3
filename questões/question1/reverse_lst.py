@@ -1,12 +1,5 @@
 from AED.classes.listaligada import ListaLigada
-
 lst = ListaLigada()
-for x in range(5):
-    lst.append(x)
-
-print("Lista: ", lst)
-# Lista pronta para testar a função.
-
 def reverse_lst(lst):
     tam = int(lst._tam)
     aux = tam - 1
@@ -18,7 +11,6 @@ def reverse_lst(lst):
         aux -= 1
     return lst
 
-print("Lista invertida: ", reverse_lst(lst))
 
 '''
 l = ListaLigada()

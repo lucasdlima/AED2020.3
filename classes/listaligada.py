@@ -142,6 +142,7 @@ class ListaLigada:
             else:
                 self.impares = num
 
+
     def pop(self):
         removido = self.fim.data
         anterior = self.inicio

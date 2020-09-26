@@ -1,10 +1,10 @@
 from AED.classes.listaligada import ListaLigada
-
+'''
 lst = ListaLigada()
 lst.append(1)
 lst.append(7)
 print(lst)
-
+'''
 
 # Lista pronta para testar a função
 
@@ -16,7 +16,7 @@ def double(lst):
     return lst
 
 
-print(double(lst))
+#print(double(lst))
 
 '''
 l = ListaLigada()

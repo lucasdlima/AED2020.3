@@ -1,5 +1,5 @@
 from AED.classes.listaligada import ListaLigada
-lst = ListaLigada()
+#lst = ListaLigada()
 def reverse_lst(lst):
     tam = int(lst._tam)
     aux = tam - 1

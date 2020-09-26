@@ -1,14 +1,6 @@
 from AED.questões.question9.classes import ListaDupl
 from AED.classes.listaligada import ListaLigada
-
-
-def double(lst):
-    pos = 0
-    for i in range(len(lst)):
-        lst.insert(pos, lst[pos])
-        pos += 2
-    return lst
-
+from AED.questões.question3.double_lst import double
 
 l = ListaLigada()
 for x in range(3):
